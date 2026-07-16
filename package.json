@@ -1,0 +1,13 @@
+{
+  "name": "oxyshade-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MVP website for OxyShade pilot and partnership requests.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OxyShade - living technology for modern spaces</title>
+    <meta name="description" content="OxyShade is a modular microalgae photobioreactor prototype for interiors, education, pilot installations and partnerships in Kyrgyzstan.">
+    <meta property="og:title" content="OxyShade - living technology for modern spaces">
+    <meta property="og:description" content="A ClimateTech prototype with Chlorella microalgae for visible photosynthesis, partial shading and pilot partnerships.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/oxyshade-hero-concept.png">
+    <meta name="theme-color" content="#103d34">
+    <link rel="preload" href="/assets/oxyshade-hero-concept.png" as="image">
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+      window.OXY_ANALYTICS_ID = "";
+    </script>
+    <script src="/content.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="OxyShade home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>OxyShade</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation"></nav>
+      <div class="language-switch" aria-label="Language switcher"></div>
+    </header>
+
+    <main>
+      <section class="hero section-band" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow" data-text="hero.eyebrow"></p>
+          <h1 data-text="hero.title"></h1>
+          <p class="lead" data-text="hero.lead"></p>
+          <div class="hero-actions">
+            <a class="button primary" href="#partnership" data-text="hero.primaryCta"></a>
+            <a class="button secondary" href="#technology" data-text="hero.secondaryCta"></a>
+          </div>
+          <div class="trust-strip" id="trust-strip"></div>
+        </div>
+        <figure class="hero-media">
+          <img src="/assets/oxyshade-hero-concept.png" alt="Concept render of a modular transparent OxyShade photobioreactor prototype near a window">
+          <figcaption data-text="hero.caption"></figcaption>
+        </figure>
+      </section>
+
+      <section class="section-band intro" id="about">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="about.eyebrow"></p>
+          <h2 data-text="about.title"></h2>
+        </div>
+        <div class="split">
+          <div>
+            <p data-text="about.body1"></p>
+            <p data-text="about.body2"></p>
+          </div>
+          <div class="metric-grid" id="metric-grid"></div>
+        </div>
+      </section>
+
+      <section class="section-band" id="technology">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="technology.eyebrow"></p>
+          <h2 data-text="technology.title"></h2>
+          <p data-text="technology.intro"></p>
+        </div>
+        <div class="tech-layout">
+          <div class="reactor-visual" aria-label="OxyShade module schematic">
+            <div class="tube tube-a"><span></span></div>
+            <div class="tube tube-b"><span></span></div>
+            <div class="tube tube-c"><span></span></div>
+            <div class="sensor-dot dot-a"></div>
+            <div class="sensor-dot dot-b"></div>
+            <div class="pump-block"></div>
+          </div>
+          <div class="item-grid" id="inside-grid"></div>
+        </div>
+      </section>
+
+      <section class="section-band muted" id="prototype">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="prototype.eyebrow"></p>
+          <h2 data-text="prototype.title"></h2>
+          <p data-text="prototype.intro"></p>
+        </div>
+        <div class="prototype-grid" id="prototype-grid"></div>
+      </section>
+
+      <section class="section-band" id="use-cases">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="useCases.eyebrow"></p>
+          <h2 data-text="useCases.title"></h2>
+        </div>
+        <div class="use-case-grid" id="use-case-grid"></div>
+      </section>
+
+      <section class="section-band research" id="research">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="research.eyebrow"></p>
+          <h2 data-text="research.title"></h2>
+          <p data-text="research.intro"></p>
+        </div>
+        <div class="research-table" id="research-table"></div>
+      </section>
+
+      <section class="section-band partnership" id="partnership">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="partnership.eyebrow"></p>
+          <h2 data-text="partnership.title"></h2>
+          <p data-text="partnership.intro"></p>
+        </div>
+        <div class="partnership-layout">
+          <div class="partner-list" id="partner-list"></div>
+          <form class="lead-form" id="lead-form" novalidate>
+            <input class="honeypot" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true">
+            <label>
+              <span data-text="form.type"></span>
+              <select name="type" required></select>
+            </label>
+            <label>
+              <span data-text="form.name"></span>
+              <input name="name" type="text" autocomplete="name" required minlength="2">
+            </label>
+            <label>
+              <span data-text="form.email"></span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              <span data-text="form.organization"></span>
+              <input name="organization" type="text" autocomplete="organization">
+            </label>
+            <label>
+              <span data-text="form.phone"></span>
+              <input name="phone" type="tel" autocomplete="tel">
+            </label>
+            <label class="full">
+              <span data-text="form.message"></span>
+              <textarea name="message" rows="5"></textarea>
+            </label>
+            <button class="button primary" type="submit" data-text="form.submit"></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section-band muted" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="faq.eyebrow"></p>
+          <h2 data-text="faq.title"></h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </section>
+
+      <section class="section-band contacts" id="contacts">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="contacts.eyebrow"></p>
+          <h2 data-text="contacts.title"></h2>
+          <p data-text="contacts.intro"></p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:hello@oxyshade.example" data-text="contacts.email"></a>
+          <a class="button secondary" href="/oxyshade-brief.md" download data-text="contacts.brief"></a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

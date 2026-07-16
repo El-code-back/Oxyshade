@@ -1,0 +1,7 @@
+.agents/
+.codex/
+data/*.jsonl
+push-repo/
+node_modules/
+.env
+.DS_Store
