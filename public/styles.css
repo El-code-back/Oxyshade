@@ -1,21 +1,19 @@
 :root {
   --ink: #10201d;
-  --muted: #415b55;
-  --paper: #f4faf7;
+  --muted: #465f58;
+  --paper: #f6f8f4;
   --surface: #ffffff;
-  --line: #cfe1da;
-  --green: #1f8a5b;
-  --green-dark: #0e4d3b;
-  --green-deep: #0a3a30;
-  --blue: #155f88;
-  --blue-deep: #0c3d5c;
-  --aqua: #c9f1e8;
-  --amber: #efb95a;
-  --coral: #de6a57;
-  --shadow: 0 18px 46px rgba(19, 55, 47, 0.12);
+  --surface-soft: #eef5ef;
+  --line: #d5e2da;
+  --line-strong: #9db9ad;
+  --green: #1f7a55;
+  --green-dark: #0d4939;
+  --blue: #1b6686;
+  --amber: #d79a2b;
+  --coral: #c65345;
+  --shadow: 0 14px 34px rgba(20, 52, 45, 0.08);
   --section-max: 1160px;
   --section-pad-x: clamp(20px, 4.5vw, 64px);
-  --premium-border: rgba(15, 77, 62, 0.14);
 }
 
 * {
@@ -28,13 +26,9 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  /* improved: moved from a flat page fill to layered climate-tech bands so the site feels designed, not merely assembled */
-  background:
-    linear-gradient(180deg, rgba(201, 241, 232, 0.48) 0, rgba(244, 250, 247, 0) 520px),
-    linear-gradient(90deg, rgba(21, 95, 136, 0.06), transparent 42%, rgba(31, 138, 91, 0.08)),
-    var(--paper);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;
 }
 
@@ -53,10 +47,10 @@ a {
   top: 12px;
   z-index: 100;
   transform: translateY(-160%);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 10px 14px;
   color: #ffffff;
-  background: var(--green-deep);
+  background: var(--green-dark);
   font-weight: 800;
   text-decoration: none;
   transition: transform 160ms ease;
@@ -67,54 +61,53 @@ a {
 }
 
 .site-header {
-  /* исправлено: шапка была слишком воздушной и конкурировала с hero; стала ниже и плотнее, чтобы быстрее вести к CTA */
   position: sticky;
   top: 0;
   z-index: 20;
   display: grid;
-  /* improved: added a persistent desktop conversion action without crowding the main navigation */
   grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 18px;
   min-height: 66px;
   padding: 10px var(--section-pad-x);
-  background: rgba(246, 252, 249, 0.82);
+  background: rgba(246, 248, 244, 0.94);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 10px 34px rgba(16, 55, 47, 0.06);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 22px rgba(16, 45, 39, 0.045);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
+  font-weight: 850;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
 .brand-mark {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(13, 73, 57, 0.24);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 34% 34%, #d6fff1 0 18%, transparent 19%),
-    linear-gradient(135deg, var(--green), var(--blue));
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.75), 0 10px 24px rgba(31, 138, 91, 0.28);
+    radial-gradient(circle at 36% 34%, #e5fff4 0 16%, transparent 17%),
+    var(--green);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.72);
 }
 
 .site-nav {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .site-nav a,
 .language-switch button {
   min-height: 38px;
   border: 0;
-  border-radius: 8px;
-  padding: 9px 12px;
+  border-radius: 6px;
+  padding: 9px 11px;
   background: transparent;
   color: var(--muted);
   font: inherit;
@@ -128,7 +121,7 @@ a {
 .language-switch button:hover,
 .language-switch .active {
   color: var(--ink);
-  background: #e8f4ef;
+  background: #e8f0eb;
 }
 
 .header-cta {
@@ -136,21 +129,25 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 38px;
-  border-radius: 8px;
+  border: 1px solid var(--green-dark);
+  border-radius: 6px;
   padding: 9px 14px;
   color: #ffffff;
-  background: linear-gradient(135deg, var(--green-deep), var(--blue-deep));
-  box-shadow: 0 10px 24px rgba(10, 58, 48, 0.18);
+  background: var(--green-dark);
   font-size: 13px;
   font-weight: 850;
   text-decoration: none;
   white-space: nowrap;
 }
 
+.header-cta:hover {
+  background: #0a382d;
+}
+
 .language-switch {
   display: inline-flex;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 7px;
   padding: 3px;
   background: var(--surface);
 }
@@ -160,7 +157,7 @@ a {
   width: 42px;
   height: 42px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 7px;
   background: var(--surface);
 }
 
@@ -173,15 +170,13 @@ a {
 }
 
 :focus-visible {
-  /* исправлено: интерактивные элементы почти не имели keyboard-focus; добавлен заметный WCAG-friendly контур */
-  outline: 3px solid rgba(21, 95, 136, 0.32);
+  outline: 3px solid rgba(27, 102, 134, 0.32);
   outline-offset: 3px;
 }
 
 .section-band {
-  /* исправлено: вертикальные отступы были неравномерно крупными; введена единая шкала секций */
-  padding: clamp(58px, 7vw, 96px) var(--section-pad-x);
   position: relative;
+  padding: clamp(58px, 7vw, 96px) var(--section-pad-x);
 }
 
 .section-band > * {
@@ -191,56 +186,44 @@ a {
 }
 
 .muted {
-  /* improved: muted sections now have a subtle material feel rather than a plain fill */
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.58), transparent 48%),
-    #eaf5f0;
+  background: var(--surface-soft);
+  border-block: 1px solid rgba(157, 185, 173, 0.28);
 }
 
 .hero {
-  /* исправлено: hero занимал почти весь экран и прятал следующий контекст; теперь первый экран показывает продукт, CTA и намёк продолжения */
   display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
-  gap: clamp(30px, 4.8vw, 58px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  gap: clamp(32px, 5vw, 62px);
   align-items: center;
   min-height: auto;
-  padding-top: clamp(24px, 3.4vw, 42px);
-  padding-bottom: clamp(28px, 4vw, 46px);
   overflow: hidden;
+  padding-top: clamp(34px, 4.4vw, 58px);
+  padding-bottom: clamp(38px, 5vw, 64px);
   background:
-    linear-gradient(120deg, rgba(238, 250, 244, 0.95) 0%, rgba(246, 252, 249, 0.92) 48%, rgba(228, 243, 249, 0.9) 100%);
-}
-
-.hero::before {
-  /* improved: added an architectural grid texture to support the engineering/ClimateTech positioning */
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(21, 95, 136, 0.075) 1px, transparent 1px),
-    linear-gradient(rgba(31, 138, 91, 0.06) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(90deg, black, transparent 78%);
+    linear-gradient(90deg, rgba(13, 73, 57, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(13, 73, 57, 0.035) 1px, transparent 1px),
+    #f8faf5;
+  background-size: 64px 64px, 64px 64px, auto;
 }
 
 .hero-copy,
 .hero-media {
   position: relative;
   z-index: 1;
+  max-width: none;
 }
 
-.hero-copy,
-.hero-media {
-  max-width: none;
+.hero-copy {
+  border-left: 4px solid var(--green);
+  padding-left: clamp(18px, 2.4vw, 28px);
 }
 
 .eyebrow {
   margin: 0 0 12px;
   color: var(--blue);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -259,30 +242,23 @@ h3 {
 }
 
 h1 {
-  /* исправлено: H1 был слишком крупным на desktop и дробил русские строки; ограничен комфортный диапазон */
   max-width: 720px;
-  font-size: clamp(35px, 4.2vw, 54px);
+  color: var(--green-dark);
+  font-size: clamp(35px, 4.4vw, 56px);
   letter-spacing: 0;
-  /* improved: brand headline now has a controlled technical gradient for stronger first impression */
-  color: var(--green-deep);
-  background: linear-gradient(105deg, #082b24 0%, #0f4f3e 48%, #155f88 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  font-size: clamp(28px, 3.4vw, 46px);
-  max-width: 780px;
+  max-width: 790px;
+  font-size: clamp(28px, 3.25vw, 44px);
 }
 
 h3 {
-  font-size: clamp(18px, 1.5vw, 21px);
+  font-size: clamp(18px, 1.45vw, 20px);
   line-height: 1.18;
 }
 
 .lead {
-  /* исправлено: lead был почти равен заголовкам по весу; теперь поддерживает H1, но не спорит с ним */
   max-width: 620px;
   margin: 18px 0 0;
   color: #2f4942;
@@ -295,78 +271,72 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
 .button {
-  /* исправлено: CTA были маловаты для primary action; увеличена зона клика и добавлена стабильная тень */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 50px;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 13px 20px;
-  font-weight: 800;
+  font-weight: 850;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(14, 77, 59, 0.12);
-  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(14, 77, 59, 0.16);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .button.primary {
   color: #ffffff;
-  background: linear-gradient(135deg, var(--green-deep), #127b59 58%, var(--blue-deep));
+  background: var(--green-dark);
+}
+
+.button.primary:hover {
+  background: #0a382d;
 }
 
 .button.secondary {
   color: var(--green-dark);
-  background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(14, 77, 59, 0.2);
+  background: transparent;
+  border-color: rgba(13, 73, 57, 0.28);
+}
+
+.button.secondary:hover {
+  background: #eaf2ed;
 }
 
 .trust-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 22px;
 }
 
 .trust-strip span {
-  border: 1px solid rgba(14, 77, 59, 0.13);
+  border: 1px solid rgba(13, 73, 57, 0.16);
   border-radius: 999px;
   padding: 7px 11px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.76);
   color: var(--muted);
-  font-size: 14px;
-  box-shadow: 0 10px 22px rgba(16, 55, 47, 0.05);
+  font-size: 13px;
 }
 
 .hero-media {
   margin: 0;
-  /* improved: product visual now reads as a deliberate product showcase, not a bare image */
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  padding: 10px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(201, 241, 232, 0.32)),
-    rgba(255, 255, 255, 0.56);
-  box-shadow: 0 24px 70px rgba(16, 55, 47, 0.16);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .hero-media img {
   width: 100%;
-  /* исправлено: изображение было слишком высоким и перетягивало первый экран; формат стал более лендинговым */
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: none;
+  border-radius: 4px;
 }
 
 .hero-media figcaption {
@@ -374,25 +344,16 @@ h3 {
   border-left: 3px solid var(--green);
   padding-left: 10px;
   color: #526b65;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
 }
 
 .section-heading {
+  position: relative;
   max-width: 820px;
   margin-bottom: clamp(24px, 4vw, 38px);
-  position: relative;
-}
-
-.section-heading::before {
-  /* improved: section starts now have a consistent visual anchor for faster scanning */
-  content: "";
-  display: block;
-  width: 54px;
-  height: 4px;
-  border-radius: 999px;
-  margin-bottom: 16px;
-  background: linear-gradient(90deg, var(--green), var(--blue));
+  padding-left: 18px;
+  border-left: 3px solid var(--green);
 }
 
 .section-heading p:not(.eyebrow) {
@@ -424,34 +385,33 @@ h3 {
 .research-row,
 details,
 .lead-form {
-  /* исправлено: все карточки имели одинаково тяжёлую тень; тень облегчена, чтобы UI не выглядел как набор разрозненных плиток */
-  border: 1px solid var(--premium-border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 16px 36px rgba(24, 62, 54, 0.075);
-  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  box-shadow: 0 8px 22px rgba(20, 52, 45, 0.045);
 }
 
 .metric {
-  /* improved: metrics now feel like product proof points instead of generic tiles */
   min-height: 112px;
   padding: 18px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(232, 247, 241, 0.88));
+  border-left: 4px solid rgba(31, 122, 85, 0.62);
 }
 
 .metric span {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .metric strong {
   display: block;
   margin-top: 8px;
+  color: var(--green-dark);
   font-size: 20px;
   line-height: 1.15;
-  color: var(--green-deep);
 }
 
 .tech-layout {
@@ -463,17 +423,15 @@ details,
 
 .reactor-visual {
   position: relative;
-  /* исправлено: схема была слишком высокой для соседнего контента; уменьшена высота и усилен инженерный фон */
-  min-height: 460px;
+  min-height: 440px;
   overflow: hidden;
-  border: 1px solid rgba(14, 77, 59, 0.16);
-  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
   background:
-    linear-gradient(90deg, rgba(29, 116, 166, 0.1) 1px, transparent 1px),
-    linear-gradient(rgba(31, 138, 91, 0.1) 1px, transparent 1px),
-    linear-gradient(135deg, #fbfffd, #d8f0eb 58%, #e9f5fb);
+    linear-gradient(90deg, rgba(27, 102, 134, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(31, 122, 85, 0.1) 1px, transparent 1px),
+    #f7fbf8;
   background-size: 42px 42px, 42px 42px, auto;
-  box-shadow: inset 0 0 80px rgba(31, 138, 91, 0.12), 0 18px 46px rgba(16, 55, 47, 0.09);
 }
 
 .tube {
@@ -483,7 +441,7 @@ details,
   height: 72px;
   border: 12px solid rgba(18, 105, 76, 0.24);
   border-radius: 999px;
-  box-shadow: inset 0 0 32px rgba(47, 194, 126, 0.24), 0 8px 20px rgba(18, 75, 69, 0.12);
+  box-shadow: inset 0 0 32px rgba(47, 194, 126, 0.24);
 }
 
 .tube span {
@@ -517,7 +475,7 @@ details,
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  box-shadow: 0 0 0 8px rgba(239, 185, 90, 0.16);
+  box-shadow: 0 0 0 8px rgba(215, 154, 43, 0.16);
 }
 
 .dot-a {
@@ -535,8 +493,8 @@ details,
   top: 54px;
   width: 74px;
   height: 106px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #ffffff, #e7f3f2);
+  border-radius: 7px;
+  background: #ffffff;
 }
 
 @keyframes flow {
@@ -558,26 +516,9 @@ details,
 }
 
 .info-card {
-  position: relative;
-  overflow: hidden;
   min-height: 168px;
   padding: clamp(18px, 2vw, 24px);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-}
-
-.info-card::before {
-  /* improved: cards get a subtle colored cap so repeated content feels branded and easier to scan */
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 4px;
-  background: linear-gradient(90deg, var(--green), var(--blue));
-}
-
-.info-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(31, 138, 91, 0.28);
-  box-shadow: 0 22px 46px rgba(24, 62, 54, 0.11);
+  border-top: 3px solid rgba(31, 122, 85, 0.46);
 }
 
 .info-card p {
@@ -587,7 +528,6 @@ details,
 }
 
 .use-case-grid {
-  /* исправлено: 5 равных колонок сжимали текст и ломали скорость сканирования; auto-fit держит карточки читаемыми */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
@@ -601,7 +541,6 @@ details,
 }
 
 .research-row {
-  /* исправлено: таблица исследований была плотной и плохо читалась по F-паттерну; строки стали выше и с явной колонкой статуса */
   display: grid;
   grid-template-columns: 1fr 160px 1.5fr;
   gap: 16px;
@@ -613,12 +552,13 @@ details,
 .research-row span {
   display: inline-flex;
   justify-content: center;
+  border: 1px solid rgba(215, 154, 43, 0.34);
   border-radius: 999px;
   padding: 7px 10px;
   color: #5d3a05;
-  background: #fff0c7;
-  font-size: 14px;
-  font-weight: 800;
+  background: #fff5dc;
+  font-size: 13px;
+  font-weight: 850;
 }
 
 .research-row p {
@@ -634,13 +574,11 @@ details,
 }
 
 .lead-form {
-  /* исправлено: форма визуально терялась среди карточек; добавлен больший внутренний ритм и более явный фокус на конверсии */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   padding: clamp(22px, 3vw, 30px);
-  border-top: 5px solid var(--green);
-  box-shadow: 0 26px 70px rgba(16, 55, 47, 0.14);
+  border-top: 4px solid var(--green);
 }
 
 .lead-form label {
@@ -648,7 +586,7 @@ details,
   gap: 7px;
   color: var(--muted);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .lead-form .full {
@@ -660,7 +598,7 @@ details,
 .lead-form textarea {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 13px 14px;
   color: var(--ink);
   background: #ffffff;
@@ -670,7 +608,7 @@ details,
 .lead-form input:focus,
 .lead-form select:focus,
 .lead-form textarea:focus {
-  outline: 3px solid rgba(31, 138, 91, 0.18);
+  outline: 3px solid rgba(31, 122, 85, 0.18);
   border-color: var(--green);
 }
 
@@ -704,17 +642,15 @@ details,
 
 details {
   padding: 20px 22px;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
 details[open] {
-  border-color: rgba(31, 138, 91, 0.26);
-  box-shadow: 0 20px 44px rgba(24, 62, 54, 0.095);
+  border-color: rgba(31, 122, 85, 0.34);
 }
 
 summary {
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 details p {
@@ -723,23 +659,23 @@ details p {
 }
 
 .contacts {
-  /* исправлено: финальный блок был плоским тёмным пятном; добавлен спокойный глубинный фон без декоративных орбов */
-  background:
-    linear-gradient(135deg, rgba(21, 95, 136, 0.3), transparent 42%),
-    linear-gradient(90deg, rgba(31, 138, 91, 0.22), transparent 62%),
-    #10201d;
+  background: var(--green-dark);
   color: #f7fbf8;
 }
 
 .contacts .eyebrow,
 .contacts .section-heading p {
-  color: #b8dad2;
+  color: #c6ddd5;
+}
+
+.contacts .section-heading {
+  border-left-color: #91d1b7;
 }
 
 .contacts .button.secondary {
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.34);
 }
 
 @media (max-width: 1100px) {
@@ -764,7 +700,7 @@ details p {
     flex-direction: column;
     align-items: stretch;
     border: 1px solid var(--line);
-    border-radius: 8px;
+    border-radius: 7px;
     padding: 8px;
     background: var(--surface);
     box-shadow: var(--shadow);
@@ -792,7 +728,6 @@ details p {
 
 @media (max-width: 720px) {
   .site-header {
-    /* исправлено: мобильная шапка могла провоцировать переполнение; сетка стала компактнее */
     gap: 10px;
     padding-inline: 12px;
   }
@@ -810,18 +745,17 @@ details p {
   }
 
   .hero {
-    min-height: auto;
     padding-top: 44px;
-    background-size: auto;
+    background-size: 48px 48px, 48px 48px, auto;
+  }
+
+  .hero-copy {
+    padding-left: 16px;
   }
 
   h1 {
-    /* исправлено: мобильный H1 был слишком массивным для RU/KG строк; уменьшен и получил больший line-height */
     font-size: clamp(34px, 10vw, 40px);
     line-height: 1.12;
-    -webkit-text-fill-color: currentColor;
-    background: none;
-    color: var(--green-deep);
   }
 
   .lead {
@@ -842,8 +776,7 @@ details p {
   }
 
   .hero-media {
-    padding: 7px;
-    border-radius: 10px;
+    padding: 6px;
   }
 
   .tube {
