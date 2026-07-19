@@ -3,174 +3,429 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OxyShade - living technology for modern spaces</title>
-    <meta name="description" content="OxyShade is a modular microalgae photobioreactor prototype for interiors, education, pilot installations and partnerships in Kyrgyzstan.">
-    <meta property="og:title" content="OxyShade - living technology for modern spaces">
-    <meta property="og:description" content="A ClimateTech prototype with Chlorella microalgae for visible photosynthesis, partial shading and pilot partnerships.">
+    <title>OxyShade — живая технология для современных пространств</title>
+    <meta name="description" content="Модульный фотобиореактор с Chlorella для демонстрации фотосинтеза, образовательных сценариев и пилотных установок в Бишкеке.">
+    <meta property="og:title" content="OxyShade — living technology for modern spaces">
+    <meta property="og:description" content="A ClimateTech prototype with Chlorella microalgae for visible photosynthesis, partial shading and pilot partnerships in Bishkek, Kyrgyzstan.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/assets/oxyshade-hero-concept.png">
-    <meta name="theme-color" content="#103d34">
+    <meta name="theme-color" content="#0c1e18">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/oxyshade-hero-concept.png" as="image">
     <link rel="stylesheet" href="/styles.css">
-    <script>
-      window.OXY_ANALYTICS_ID = "";
-    </script>
+    <script>window.OXY_ANALYTICS_ID = "";</script>
     <script src="/content.js" defer></script>
     <script src="/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- Skip link -->
+    <a class="skip-link" href="#home">Перейти к содержанию</a>
+
+    <!-- ════ HEADER ════════════════════════════════════════════ -->
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="OxyShade home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>OxyShade</span>
+      <a class="brand" href="#home" aria-label="OxyShade — главная">
+        <!-- Logo mark SVG (derived from founder's logo: orbital lime ring + dots on blue-teal body) -->
+        <svg class="logo-mark" width="34" height="34" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1e3582" transform="rotate(-18 40 40)"/>
+          <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1a6b50" opacity="0.45" transform="rotate(-18 40 40)"/>
+          <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="#b3ef3a" stroke-width="4.5" stroke-dasharray="112 60" transform="rotate(-18 40 40)"/>
+          <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="rgba(190,215,210,0.6)" stroke-width="3.5" stroke-dasharray="36 136" stroke-dashoffset="-118" transform="rotate(-18 40 40)"/>
+          <circle cx="20" cy="46" r="7" fill="#b3ef3a"/>
+          <circle cx="58" cy="35" r="5.5" fill="white"/>
+        </svg>
+        <span class="brand-name">OxyShade</span>
       </a>
+
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
+
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation"></nav>
+
       <div class="language-switch" aria-label="Language switcher"></div>
+
       <a class="header-cta" href="#partnership" data-text="hero.primaryCta"></a>
     </header>
 
+    <!-- ════ MAIN ═══════════════════════════════════════════════ -->
     <main>
-      <section class="hero section-band" id="home">
-        <div class="hero-copy">
-          <p class="eyebrow" data-text="hero.eyebrow"></p>
-          <h1 data-text="hero.title"></h1>
-          <p class="lead" data-text="hero.lead"></p>
-          <div class="hero-actions">
-            <a class="button primary" href="#partnership" data-text="hero.primaryCta"></a>
-            <a class="button secondary" href="#technology" data-text="hero.secondaryCta"></a>
+
+      <!-- HERO ─────────────────────────────────────────────── -->
+      <section class="hero section-band" id="home" scroll-margin-top="80px">
+        <div class="hero-inner">
+
+          <div class="hero-copy">
+            <div class="hero-stage-badge">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span data-text="hero.stage"></span>
+            </div>
+            <p class="eyebrow" data-text="hero.eyebrow"></p>
+            <h1 data-text="hero.title"></h1>
+            <p class="lead" data-text="hero.lead"></p>
+            <div class="hero-actions">
+              <a class="button primary" href="#partnership" data-text="hero.primaryCta"></a>
+              <a class="button ghost" href="#technology" data-text="hero.secondaryCta"></a>
+            </div>
           </div>
-          <div class="trust-strip" id="trust-strip"></div>
+
+          <figure class="hero-media">
+            <div class="hero-img-wrap">
+              <img
+                src="/assets/oxyshade-hero-concept.png"
+                alt="Concept render of a modular transparent OxyShade photobioreactor panel installed near a window in a modern interior"
+                loading="eager"
+                fetchpriority="high"
+                width="960"
+                height="540">
+              <div class="concept-badge-overlay">
+                <span data-text="hero.conceptBadge"></span>
+              </div>
+            </div>
+            <figcaption data-text="hero.caption"></figcaption>
+          </figure>
+
         </div>
-        <figure class="hero-media">
-          <img src="/assets/oxyshade-hero-concept.png" alt="Concept render of a modular transparent OxyShade photobioreactor prototype near a window">
-          <figcaption data-text="hero.caption"></figcaption>
-        </figure>
+
+        <!-- Trust strip -->
+        <div class="trust-strip-row">
+          <div class="trust-strip" id="trust-strip" aria-label="Project context"></div>
+        </div>
       </section>
 
-      <section class="section-band intro" id="about">
-        <div class="section-heading">
-          <p class="eyebrow" data-text="about.eyebrow"></p>
-          <h2 data-text="about.title"></h2>
-        </div>
-        <div class="split">
-          <div>
+      <!-- ABOUT ────────────────────────────────────────────── -->
+      <section class="section-band about-section" id="about">
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <p class="eyebrow" data-text="about.eyebrow"></p>
+            <h2 data-text="about.title"></h2>
             <p data-text="about.body1"></p>
             <p data-text="about.body2"></p>
           </div>
-          <div class="metric-grid" id="metric-grid"></div>
+          <div class="about-status reveal">
+            <div class="metric-grid" id="metric-grid"></div>
+          </div>
         </div>
       </section>
 
-      <section class="section-band" id="technology">
-        <div class="section-heading">
+      <!-- TECHNOLOGY ───────────────────────────────────────── -->
+      <section class="section-band muted technology-section" id="technology">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="technology.eyebrow"></p>
           <h2 data-text="technology.title"></h2>
           <p data-text="technology.intro"></p>
         </div>
+
         <div class="tech-layout">
-          <div class="reactor-visual" aria-label="OxyShade module schematic">
-            <div class="tube tube-a"><span></span></div>
-            <div class="tube tube-b"><span></span></div>
-            <div class="tube tube-c"><span></span></div>
-            <div class="sensor-dot dot-a"></div>
-            <div class="sensor-dot dot-b"></div>
-            <div class="pump-block"></div>
+          <!-- Vertical reactor SVG diagram -->
+          <div class="reactor-wrap reveal" aria-label="OxyShade vertical photobioreactor schematic">
+            <svg id="reactor-svg" viewBox="0 0 440 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="reactor-title">
+              <title id="reactor-title">OxyShade vertical photobioreactor diagram with 3 tubes</title>
+              <defs>
+                <linearGradient id="rg-tube" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#daf2e4"/>
+                  <stop offset="45%" stop-color="#f0fbf5"/>
+                  <stop offset="100%" stop-color="#daf2e4"/>
+                </linearGradient>
+                <linearGradient id="rg-liquid" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(179,239,58,0.16)"/>
+                  <stop offset="55%" stop-color="rgba(58,171,110,0.28)"/>
+                  <stop offset="100%" stop-color="rgba(15,76,48,0.42)"/>
+                </linearGradient>
+                <linearGradient id="rg-shine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.48)"/>
+                  <stop offset="38%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>
+                <clipPath id="clip-a"><rect x="54" y="88" width="78" height="262" rx="39"/></clipPath>
+                <clipPath id="clip-b"><rect x="181" y="88" width="78" height="262" rx="39"/></clipPath>
+                <clipPath id="clip-c"><rect x="308" y="88" width="78" height="262" rx="39"/></clipPath>
+              </defs>
+
+              <!-- Panel background -->
+              <rect width="440" height="540" rx="14" fill="#f1f8f3"/>
+
+              <!-- Subtle grid -->
+              <path d="M0 180 H440 M0 350 H440" stroke="#c4d8cc" stroke-width="0.5" opacity="0.6"/>
+              <path d="M110 0 V540 M220 0 V540 M330 0 V540" stroke="#c4d8cc" stroke-width="0.5" opacity="0.4"/>
+
+              <!-- Light rays above LED bar -->
+              <g opacity="0.28" stroke="#d4a800" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5,4">
+                <line x1="93" y1="56" x2="93" y2="76"/>
+                <line x1="220" y1="50" x2="220" y2="76"/>
+                <line x1="347" y1="56" x2="347" y2="76"/>
+                <line x1="150" y1="58" x2="148" y2="76" opacity="0.5"/>
+                <line x1="290" y1="58" x2="292" y2="76" opacity="0.5"/>
+              </g>
+
+              <!-- ① LED / Light bar -->
+              <rect x="36" y="50" width="340" height="28" rx="7" fill="#fffae0" stroke="#d4a800" stroke-width="1.5"/>
+              <text x="206" y="68" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7a5400" letter-spacing="0.8">LED / NATURAL LIGHT</text>
+
+              <!-- ③ Top manifold -->
+              <rect x="38" y="78" width="364" height="20" rx="10" fill="rgba(15,80,52,0.16)" stroke="rgba(15,80,52,0.32)" stroke-width="1.5"/>
+
+              <!-- ══ TUBE A (left) ══════════════════════════════ -->
+              <rect x="54" y="88" width="78" height="262" rx="39" fill="url(#rg-tube)" stroke="rgba(15,80,52,0.28)" stroke-width="1.5"/>
+              <rect x="54" y="88" width="78" height="262" rx="39" fill="url(#rg-liquid)"/>
+              <rect x="54" y="88" width="22" height="262" rx="11" fill="url(#rg-shine)"/>
+              <g clip-path="url(#clip-a)" class="bubbles">
+                <circle cx="80" cy="340" r="4.5" fill="rgba(179,239,58,0.75)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" dur="3.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="102" cy="290" r="3" fill="rgba(179,239,58,0.5)">
+                  <animate attributeName="cy" from="344" to="96" dur="4.2s" repeatCount="indefinite" begin="1.3s"/>
+                  <animate attributeName="opacity" values="0;0.7;0.7;0" dur="4.2s" repeatCount="indefinite" begin="1.3s"/>
+                </circle>
+                <circle cx="86" cy="230" r="3.5" fill="rgba(58,171,110,0.6)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.8s" repeatCount="indefinite" begin="0.7s"/>
+                  <animate attributeName="opacity" values="0;0.8;0.8;0" dur="3.8s" repeatCount="indefinite" begin="0.7s"/>
+                </circle>
+              </g>
+
+              <!-- ══ TUBE B (center) ════════════════════════════ -->
+              <rect x="181" y="88" width="78" height="262" rx="39" fill="url(#rg-tube)" stroke="rgba(15,80,52,0.28)" stroke-width="1.5"/>
+              <rect x="181" y="88" width="78" height="262" rx="39" fill="url(#rg-liquid)"/>
+              <rect x="181" y="88" width="22" height="262" rx="11" fill="url(#rg-shine)"/>
+              <g clip-path="url(#clip-b)" class="bubbles">
+                <circle cx="208" cy="310" r="4" fill="rgba(179,239,58,0.75)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.7s" repeatCount="indefinite" begin="0.9s"/>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" dur="3.7s" repeatCount="indefinite" begin="0.9s"/>
+                </circle>
+                <circle cx="234" cy="260" r="3.5" fill="rgba(179,239,58,0.5)">
+                  <animate attributeName="cy" from="344" to="96" dur="4.5s" repeatCount="indefinite" begin="2.1s"/>
+                  <animate attributeName="opacity" values="0;0.7;0.7;0" dur="4.5s" repeatCount="indefinite" begin="2.1s"/>
+                </circle>
+                <circle cx="215" cy="200" r="3" fill="rgba(58,171,110,0.6)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.9s" repeatCount="indefinite" begin="0.4s"/>
+                  <animate attributeName="opacity" values="0;0.8;0.8;0" dur="3.9s" repeatCount="indefinite" begin="0.4s"/>
+                </circle>
+              </g>
+
+              <!-- ══ TUBE C (right) ═════════════════════════════ -->
+              <rect x="308" y="88" width="78" height="262" rx="39" fill="url(#rg-tube)" stroke="rgba(15,80,52,0.28)" stroke-width="1.5"/>
+              <rect x="308" y="88" width="78" height="262" rx="39" fill="url(#rg-liquid)"/>
+              <rect x="308" y="88" width="22" height="262" rx="11" fill="url(#rg-shine)"/>
+              <g clip-path="url(#clip-c)" class="bubbles">
+                <circle cx="336" cy="330" r="5" fill="rgba(179,239,58,0.75)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.2s" repeatCount="indefinite" begin="0.5s"/>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" dur="3.2s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                <circle cx="358" cy="270" r="3" fill="rgba(179,239,58,0.5)">
+                  <animate attributeName="cy" from="344" to="96" dur="4.8s" repeatCount="indefinite" begin="1.8s"/>
+                  <animate attributeName="opacity" values="0;0.7;0.7;0" dur="4.8s" repeatCount="indefinite" begin="1.8s"/>
+                </circle>
+                <circle cx="342" cy="210" r="4" fill="rgba(58,171,110,0.6)">
+                  <animate attributeName="cy" from="344" to="96" dur="3.6s" repeatCount="indefinite" begin="1.1s"/>
+                  <animate attributeName="opacity" values="0;0.8;0.8;0" dur="3.6s" repeatCount="indefinite" begin="1.1s"/>
+                </circle>
+              </g>
+
+              <!-- ④ Bottom manifold -->
+              <rect x="38" y="350" width="364" height="20" rx="10" fill="rgba(15,80,52,0.16)" stroke="rgba(15,80,52,0.32)" stroke-width="1.5"/>
+
+              <!-- Pump connector -->
+              <line x1="220" y1="370" x2="220" y2="400" stroke="rgba(15,80,52,0.3)" stroke-width="7" stroke-linecap="round"/>
+
+              <!-- ⑥ Pump -->
+              <circle cx="220" cy="428" r="26" fill="white" stroke="rgba(15,80,52,0.38)" stroke-width="2"/>
+              <path d="M207 424 C207 416 213 411 220 411 C227 411 233 416 233 424" stroke="rgba(15,80,52,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M210 436 L220 446 L230 436" stroke="rgba(15,80,52,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- ⑤ Sensor dots (left of tube A) -->
+              <circle cx="35" cy="180" r="10" fill="white" stroke="#c8841a" stroke-width="1.5"/>
+              <circle cx="35" cy="180" r="4.5" fill="rgba(200,132,26,0.45)"/>
+              <line x1="45" y1="180" x2="54" y2="180" stroke="#c8841a" stroke-width="1" stroke-dasharray="3,2"/>
+              <circle cx="35" cy="222" r="10" fill="white" stroke="#c8841a" stroke-width="1.5"/>
+              <circle cx="35" cy="222" r="4.5" fill="rgba(200,132,26,0.45)"/>
+              <line x1="45" y1="222" x2="54" y2="222" stroke="#c8841a" stroke-width="1" stroke-dasharray="3,2"/>
+
+              <!-- Algae culture label -->
+              <rect x="116" y="492" width="208" height="24" rx="6" fill="rgba(179,239,58,0.18)" stroke="rgba(15,80,52,0.22)" stroke-width="1"/>
+              <text x="220" y="508" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#0a4232" letter-spacing="0.5">Chlorella vulgaris</text>
+
+              <!-- ══ NUMBERED CALLOUT BADGES ════════════════════ -->
+              <!-- ① Light — top right of LED bar -->
+              <line x1="376" y1="64" x2="406" y2="64" stroke="#0a4232" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+              <circle cx="416" cy="64" r="10" fill="#0a4232"/>
+              <text x="416" y="68" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">1</text>
+
+              <!-- ② Water & culture — left of tube A, mid -->
+              <line x1="18" y1="220" x2="54" y2="220" stroke="#0a4232" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+              <circle cx="10" cy="220" r="10" fill="#0a4232"/>
+              <text x="10" y="224" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">2</text>
+
+              <!-- ③ Nutrients — top right of manifold -->
+              <line x1="402" y1="88" x2="406" y2="88" stroke="#0a4232" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+              <circle cx="416" cy="88" r="10" fill="#0a4232"/>
+              <text x="416" y="92" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">3</text>
+
+              <!-- ④ Circulation/Bottom manifold — right -->
+              <line x1="402" y1="360" x2="406" y2="360" stroke="#0a4232" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+              <circle cx="416" cy="360" r="10" fill="#0a4232"/>
+              <text x="416" y="364" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">4</text>
+
+              <!-- ⑤ Sensors — left (amber) -->
+              <line x1="18" y1="290" x2="35" y2="265" stroke="#c8841a" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+              <circle cx="10" cy="300" r="10" fill="#c8841a"/>
+              <text x="10" y="304" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">5</text>
+
+              <!-- ⑥ Pump — right side -->
+              <line x1="246" y1="428" x2="406" y2="428" stroke="#0a4232" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+              <circle cx="416" cy="428" r="10" fill="#0a4232"/>
+              <text x="416" y="432" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="white" font-weight="bold">6</text>
+            </svg>
           </div>
-          <div class="item-grid" id="inside-grid"></div>
+
+          <!-- Reactor legend list -->
+          <div class="reactor-legend-wrap">
+            <div class="reactor-legend" id="inside-grid" aria-label="Reactor component legend"></div>
+          </div>
         </div>
       </section>
 
-      <section class="section-band muted" id="prototype">
-        <div class="section-heading">
+      <!-- PROTOTYPE ────────────────────────────────────────── -->
+      <section class="section-band prototype-section" id="prototype">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="prototype.eyebrow"></p>
           <h2 data-text="prototype.title"></h2>
           <p data-text="prototype.intro"></p>
         </div>
-        <div class="prototype-grid" id="prototype-grid"></div>
+        <div class="prototype-layout">
+          <div class="prototype-specs-panel reveal">
+            <p class="panel-label">Характеристики</p>
+            <div id="prototype-specs"></div>
+          </div>
+          <div class="prototype-progress reveal">
+            <p class="panel-label">Прогресс</p>
+            <ul class="prototype-checklist" id="prototype-checklist"></ul>
+          </div>
+        </div>
+        <p class="prototype-note reveal" aria-label="Note">
+          <em>Реальные фотографии прототипа появятся после сборки. Концепт-рендер — художественная визуализация принципа, не финальный продукт.</em>
+        </p>
       </section>
 
-      <section class="section-band" id="use-cases">
-        <div class="section-heading">
+      <!-- USE CASES ────────────────────────────────────────── -->
+      <section class="section-band muted use-cases-section" id="use-cases">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="useCases.eyebrow"></p>
           <h2 data-text="useCases.title"></h2>
         </div>
         <div class="use-case-grid" id="use-case-grid"></div>
       </section>
 
-      <section class="section-band research" id="research">
-        <div class="section-heading">
+      <!-- Mid-page CTA -->
+      <div class="mid-cta reveal">
+        <a class="button primary" href="#partnership" data-text="hero.primaryCta"></a>
+      </div>
+
+      <!-- VALIDATION ───────────────────────────────────────── -->
+      <section class="section-band research-section" id="research">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="research.eyebrow"></p>
           <h2 data-text="research.title"></h2>
           <p data-text="research.intro"></p>
         </div>
-        <div class="research-table" id="research-table"></div>
+        <div class="validation-roadmap" id="research-table"></div>
       </section>
 
-      <section class="section-band partnership" id="partnership">
-        <div class="section-heading">
+      <!-- PARTNERSHIP ──────────────────────────────────────── -->
+      <section class="section-band muted partnership-section" id="partnership">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="partnership.eyebrow"></p>
           <h2 data-text="partnership.title"></h2>
           <p data-text="partnership.intro"></p>
         </div>
         <div class="partnership-layout">
           <div class="partner-list" id="partner-list"></div>
-          <form class="lead-form" id="lead-form" novalidate>
-            <input class="honeypot" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true">
-            <label>
-              <span data-text="form.type"></span>
-              <select name="type" required></select>
-            </label>
-            <label>
-              <span data-text="form.name"></span>
-              <input name="name" type="text" autocomplete="name" required minlength="2">
-            </label>
-            <label>
-              <span data-text="form.email"></span>
-              <input name="email" type="email" autocomplete="email" required>
-            </label>
-            <label>
-              <span data-text="form.organization"></span>
-              <input name="organization" type="text" autocomplete="organization">
-            </label>
-            <label>
-              <span data-text="form.phone"></span>
-              <input name="phone" type="tel" autocomplete="tel">
-            </label>
-            <label class="full">
-              <span data-text="form.message"></span>
-              <textarea name="message" rows="5"></textarea>
-            </label>
-            <button class="button primary" type="submit" data-text="form.submit"></button>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </form>
+          <div class="form-wrap">
+            <form class="lead-form" id="lead-form" novalidate>
+              <input class="honeypot" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true">
+
+              <label class="form-label full">
+                <span data-text="form.type"></span>
+                <select name="type" required></select>
+              </label>
+              <label class="form-label">
+                <span data-text="form.name"></span>
+                <input name="name" type="text" autocomplete="name" required minlength="2">
+              </label>
+              <label class="form-label">
+                <span data-text="form.email"></span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+              <label class="form-label">
+                <span data-text="form.organization"></span>
+                <input name="organization" type="text" autocomplete="organization">
+              </label>
+              <label class="form-label">
+                <span data-text="form.phone"></span>
+                <input name="phone" type="tel" autocomplete="tel">
+              </label>
+              <label class="form-label full">
+                <span data-text="form.message"></span>
+                <textarea name="message" rows="4"></textarea>
+              </label>
+              <button class="button primary" type="submit" data-text="form.submit"></button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
       </section>
 
-      <section class="section-band muted" id="faq">
-        <div class="section-heading">
+      <!-- FAQ ──────────────────────────────────────────────── -->
+      <section class="section-band faq-section" id="faq">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-text="faq.eyebrow"></p>
           <h2 data-text="faq.title"></h2>
         </div>
         <div class="faq-list" id="faq-list"></div>
       </section>
 
-      <section class="section-band contacts" id="contacts">
-        <div class="section-heading">
-          <p class="eyebrow" data-text="contacts.eyebrow"></p>
-          <h2 data-text="contacts.title"></h2>
-          <p data-text="contacts.intro"></p>
-        </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:hello@oxyshade.example" data-text="contacts.email"></a>
-          <a class="button secondary" href="/oxyshade-brief.md" download data-text="contacts.brief"></a>
-        </div>
-      </section>
     </main>
+
+    <!-- ════ FOOTER ════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <!-- Footer logo mark (same geometry, different context) -->
+          <svg class="logo-mark footer-logo-mark" width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1e3582" transform="rotate(-18 40 40)"/>
+            <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1a6b50" opacity="0.45" transform="rotate(-18 40 40)"/>
+            <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="#b3ef3a" stroke-width="4.5" stroke-dasharray="112 60" transform="rotate(-18 40 40)"/>
+            <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="rgba(190,215,210,0.6)" stroke-width="3.5" stroke-dasharray="36 136" stroke-dashoffset="-118" transform="rotate(-18 40 40)"/>
+            <circle cx="20" cy="46" r="7" fill="#b3ef3a"/>
+            <circle cx="58" cy="35" r="5.5" fill="white"/>
+          </svg>
+          <div>
+            <p class="footer-wordmark">OxyShade</p>
+            <p class="footer-tagline" id="footer-tagline"></p>
+          </div>
+        </div>
+
+        <nav class="footer-nav" id="footer-nav" aria-label="Footer navigation"></nav>
+
+        <div class="footer-meta-col">
+          <p class="footer-status-badge"><span class="status-dot" aria-hidden="true"></span><span id="footer-status"></span></p>
+          <p id="footer-location"></p>
+          <p id="footer-context"></p>
+        </div>
+
+        <div class="footer-langs-col">
+          <div class="language-switch" aria-label="Language switcher"></div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p id="footer-privacy" class="footer-privacy-note"></p>
+        <p id="footer-legal" class="footer-legal"></p>
+      </div>
+    </footer>
+
   </body>
 </html>
