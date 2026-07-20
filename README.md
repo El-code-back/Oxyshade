@@ -26,7 +26,7 @@ or:
 node server.js
 ```
 
-Submitted forms are saved to `data/leads.jsonl`.
+Submitted forms are saved to `data/leads.jsonl` locally. In production, the same form can also send each request to Telegram.
 
 ## Edit content
 
@@ -40,16 +40,31 @@ To change a text, edit the matching language object:
 
 To add a language, add a new top-level object in `public/content.js`, add its code to `LANGS` in `public/app.js`, and make sure every key has a translation.
 
-## Forms and notifications
+## Forms and Telegram notifications
 
-The server handles `POST /api/lead`, validates required fields, checks a hidden honeypot field and stores each request as JSONL. For production, replace or extend the save step in `server.js` with one of these:
+The site posts form requests to `POST /api/lead`. The handler validates required fields, checks a hidden honeypot field, saves the request locally when possible and sends it to Telegram when these environment variables are configured:
 
-- send an email through an email API
-- forward the lead to a CRM
-- post the request to a private webhook
-- save the lead in a database
+```bash
+TELEGRAM_BOT_TOKEN=123456:bot-token-from-botfather
+TELEGRAM_CHAT_ID=123456789
+```
 
-Keep server-side validation even if a CRM or email service is connected.
+Optional:
+
+```bash
+TELEGRAM_MESSAGE_THREAD_ID=1
+SAVE_LEADS_TO_FILE=false
+```
+
+Setup:
+
+1. Create a bot in Telegram through `@BotFather` and copy the token.
+2. Send any message to the bot from the founder account, or add the bot to a private team group.
+3. Open `https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/getUpdates` and copy the `chat.id`.
+4. Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in Vercel Project Settings → Environment Variables.
+5. Redeploy the project.
+
+Keep server-side validation even if a database or CRM is connected later.
 
 ## Analytics
 

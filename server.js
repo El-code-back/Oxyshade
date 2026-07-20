@@ -1,13 +1,11 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const crypto = require("crypto");
+const { deliverLead, normalizeLead } = require("./lead-service");
 
 const PORT = Number(process.env.PORT || 3000);
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, "public");
-const DATA_DIR = path.join(ROOT, "data");
-const LEADS_FILE = path.join(DATA_DIR, "leads.jsonl");
 const MAX_BODY = 50 * 1024;
 const rateLimits = new Map();
 
@@ -99,45 +97,6 @@ function checkRateLimit(req) {
   return recent.length <= 8;
 }
 
-function normalizeLead(input, req) {
-  const name = String(input.name || "").trim();
-  const email = String(input.email || "").trim().toLowerCase();
-  const organization = String(input.organization || "").trim();
-  const type = String(input.type || "").trim();
-  const phone = String(input.phone || "").trim();
-  const message = String(input.message || "").trim();
-  const language = String(input.language || "ru").trim();
-  const page = String(input.page || "").trim();
-
-  if (String(input.website || "").trim()) {
-    return { spam: true };
-  }
-
-  if (!name || name.length < 2) {
-    throw new Error("Name is required");
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    throw new Error("Valid email is required");
-  }
-  if (!type) {
-    throw new Error("Interest type is required");
-  }
-
-  return {
-    id: crypto.randomUUID(),
-    createdAt: new Date().toISOString(),
-    name,
-    email,
-    organization,
-    type,
-    phone,
-    message,
-    language,
-    page,
-    ipHash: crypto.createHash("sha256").update(req.socket.remoteAddress || "").digest("hex").slice(0, 16)
-  };
-}
-
 async function handleLead(req, res) {
   if (!checkRateLimit(req)) {
     send(res, 429, { ok: false, message: "Too many requests. Please try again later." });
@@ -146,15 +105,14 @@ async function handleLead(req, res) {
 
   try {
     const input = await readJsonBody(req);
-    const lead = normalizeLead(input, req);
+    const lead = normalizeLead(input, { remoteAddress: req.socket.remoteAddress || "" });
 
     if (lead.spam) {
       send(res, 200, { ok: true, message: "Thanks. We received your request." });
       return;
     }
 
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-    fs.appendFileSync(LEADS_FILE, `${JSON.stringify(lead)}\n`, "utf8");
+    await deliverLead(lead);
 
     send(res, 200, {
       ok: true,
@@ -162,7 +120,8 @@ async function handleLead(req, res) {
       message: "Thanks. We received your request."
     });
   } catch (error) {
-    send(res, 400, { ok: false, message: error.message });
+    const status = error.message === "Telegram notification failed" || error.message === "Lead delivery is not configured" ? 502 : 400;
+    send(res, status, { ok: false, message: error.message });
   }
 }
 
