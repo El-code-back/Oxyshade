@@ -8,12 +8,12 @@
     <meta property="og:title" content="OxyShade — living technology for modern spaces">
     <meta property="og:description" content="A ClimateTech prototype with Chlorella microalgae for visible photosynthesis, partial shading and pilot partnerships in Bishkek, Kyrgyzstan.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/assets/oxyshade-hero-concept.png">
-    <meta name="theme-color" content="#0c1e18">
+    <meta property="og:image" content="/assets/oxyshade-product-drawing.jpg">
+    <meta name="theme-color" content="#4656df">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preload" href="/assets/oxyshade-hero-concept.png" as="image">
+    <link rel="preload" href="/assets/oxyshade-product-drawing.jpg" as="image">
     <link rel="stylesheet" href="/styles.css">
     <script>window.OXY_ANALYTICS_ID = "";</script>
     <script src="/content.js" defer></script>
@@ -27,15 +27,8 @@
     <!-- ════ HEADER ════════════════════════════════════════════ -->
     <header class="site-header">
       <a class="brand" href="#home" aria-label="OxyShade — главная">
-        <!-- Logo mark SVG (derived from founder's logo: orbital lime ring + dots on blue-teal body) -->
-        <svg class="logo-mark" width="34" height="34" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1e3582" transform="rotate(-18 40 40)"/>
-          <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1a6b50" opacity="0.45" transform="rotate(-18 40 40)"/>
-          <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="#b3ef3a" stroke-width="4.5" stroke-dasharray="112 60" transform="rotate(-18 40 40)"/>
-          <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="rgba(190,215,210,0.6)" stroke-width="3.5" stroke-dasharray="36 136" stroke-dashoffset="-118" transform="rotate(-18 40 40)"/>
-          <circle cx="20" cy="46" r="7" fill="#b3ef3a"/>
-          <circle cx="58" cy="35" r="5.5" fill="white"/>
-        </svg>
+        <!-- fix: use the founder's actual logo asset instead of a manually approximated SVG -->
+        <img class="logo-mark" src="/assets/oxyshade-logo-source.jpg" alt="" width="36" height="36" aria-hidden="true">
         <span class="brand-name">OxyShade</span>
       </a>
 
@@ -74,12 +67,12 @@
           <figure class="hero-media">
             <div class="hero-img-wrap">
               <img
-                src="/assets/oxyshade-hero-concept.png"
-                alt="Concept render of a modular transparent OxyShade photobioreactor panel installed near a window in a modern interior"
+                src="/assets/oxyshade-product-drawing.jpg"
+                alt="OxyShade algae curtain assembly drawing with four vertical bioreactor tubes, collectors and dimensions"
                 loading="eager"
                 fetchpriority="high"
-                width="960"
-                height="540">
+                width="1280"
+                height="960">
               <div class="concept-badge-overlay">
                 <span data-text="hero.conceptBadge"></span>
               </div>
@@ -121,6 +114,8 @@
         <div class="tech-layout">
           <!-- Vertical reactor SVG diagram -->
           <div class="reactor-wrap reveal" aria-label="OxyShade vertical photobioreactor schematic">
+            <!-- fix: show the project-specific four-tube reactor based on supplied drawings/photos -->
+            <img class="reactor-reference-img" src="/assets/oxyshade-reactor-reference.svg" alt="OxyShade four tube algae curtain bioreactor with base, collectors and pump connector">
             <svg id="reactor-svg" viewBox="0 0 440 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="reactor-title">
               <title id="reactor-title">OxyShade vertical photobioreactor diagram with 3 tubes</title>
               <defs>
@@ -302,7 +297,7 @@
           </div>
         </div>
         <p class="prototype-note reveal" aria-label="Note">
-          <em>Реальные фотографии прототипа появятся после сборки. Концепт-рендер — художественная визуализация принципа, не финальный продукт.</em>
+          <em>Визуалы на сайте приведены к текущей архитектуре OxyShade: четыре акриловые трубки, основание, верхний и нижний коллекторы. Финальные фотографии появятся после сборки и испытаний.</em>
         </p>
       </section>
 
@@ -390,15 +385,8 @@
       <div class="footer-inner">
 
         <div class="footer-brand">
-          <!-- Footer logo mark (same geometry, different context) -->
-          <svg class="logo-mark footer-logo-mark" width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1e3582" transform="rotate(-18 40 40)"/>
-            <ellipse cx="40" cy="40" rx="30" ry="23" fill="#1a6b50" opacity="0.45" transform="rotate(-18 40 40)"/>
-            <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="#b3ef3a" stroke-width="4.5" stroke-dasharray="112 60" transform="rotate(-18 40 40)"/>
-            <ellipse cx="40" cy="40" rx="30" ry="23" fill="none" stroke="rgba(190,215,210,0.6)" stroke-width="3.5" stroke-dasharray="36 136" stroke-dashoffset="-118" transform="rotate(-18 40 40)"/>
-            <circle cx="20" cy="46" r="7" fill="#b3ef3a"/>
-            <circle cx="58" cy="35" r="5.5" fill="white"/>
-          </svg>
+          <!-- fix: footer uses the same real logo file for brand consistency -->
+          <img class="logo-mark footer-logo-mark" src="/assets/oxyshade-logo-source.jpg" alt="" width="40" height="40" aria-hidden="true">
           <div>
             <p class="footer-wordmark">OxyShade</p>
             <p class="footer-tagline" id="footer-tagline"></p>

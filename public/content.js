@@ -15,8 +15,8 @@ window.OXY_CONTENT = {
       lead: "Модульный фотобиореактор с микроводорослями Chlorella: управляемый фотосинтез, частичное затенение и будущие пилотные установки в интерьерах.",
       primaryCta: "Обсудить пилот",
       secondaryCta: "Как это работает",
-      conceptBadge: "Концепт-рендер",
-      caption: "Концепт-рендер демонстрационного модуля. Финальные фотографии и данные измерений появятся после сборки и испытаний."
+      conceptBadge: "Сборочный чертеж",
+      caption: "Сборочный чертеж OxyShade: четыре акриловые трубки, коллекторы, основание и габариты прототипа."
     },
     trust: [
       "UpShift",
@@ -154,8 +154,8 @@ window.OXY_CONTENT = {
       lead: "Chlorella микробалырлары бар модулдук фотобиореактор: башкарылган фотосинтез, жарым-жартылай көлөкө жана интерьерлердеги пилоттук орнотуулар үчүн.",
       primaryCta: "Пилотту талкуулоо",
       secondaryCta: "Кантип иштейт",
-      conceptBadge: "Концепт-рендер",
-      caption: "Демонстрациялык модулдун концепт-рендери. Финалдык сүрөттөр жана өлчөөлөр тесттерден кийин кошулат."
+      conceptBadge: "Жыйноо чиймеси",
+      caption: "OxyShade жыйноо чиймеси: төрт акрил түтүк, коллекторлор, негиз жана прототиптин өлчөмдөрү."
     },
     trust: [
       "UpShift",
@@ -293,8 +293,8 @@ window.OXY_CONTENT = {
       lead: "A modular Chlorella microalgae photobioreactor for visible photosynthesis, partial shading and future pilot installations in interiors.",
       primaryCta: "Discuss a pilot",
       secondaryCta: "How it works",
-      conceptBadge: "Concept render",
-      caption: "Concept render of the demonstration module. Final photos and measurements will be added after assembly and testing."
+      conceptBadge: "Assembly drawing",
+      caption: "OxyShade assembly drawing: four acrylic tubes, collectors, base and prototype dimensions."
     },
     trust: [
       "UpShift",

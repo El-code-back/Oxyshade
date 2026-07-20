@@ -1,0 +1,108 @@
+<svg width="880" height="1080" viewBox="0 0 440 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">OxyShade four tube algae curtain reactor</title>
+  <desc id="desc">A compact OxyShade bioreactor with four vertical acrylic tubes, top and bottom collectors, side piping, base and pump connector.</desc>
+  <defs>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eef8ff"/>
+      <stop offset=".48" stop-color="#fff"/>
+      <stop offset="1" stop-color="#d5e6ef"/>
+    </linearGradient>
+    <linearGradient id="culture" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8ff66"/>
+      <stop offset=".55" stop-color="#65c92f"/>
+      <stop offset="1" stop-color="#177c30"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgba(255,255,255,.78)"/>
+      <stop offset=".5" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <clipPath id="tube-a"><rect x="88" y="122" width="44" height="256" rx="22"/></clipPath>
+    <clipPath id="tube-b"><rect x="154" y="122" width="44" height="256" rx="22"/></clipPath>
+    <clipPath id="tube-c"><rect x="220" y="122" width="44" height="256" rx="22"/></clipPath>
+    <clipPath id="tube-d"><rect x="286" y="122" width="44" height="256" rx="22"/></clipPath>
+  </defs>
+
+  <rect width="440" height="540" rx="14" fill="#f8faff"/>
+
+  <!-- fix: geometry follows the supplied 500 x 600 x 150 OxyShade drawings: four tubes on a base -->
+  <rect x="64" y="388" width="308" height="66" rx="8" fill="#eef1f6" stroke="#9ba7ba" stroke-width="1.5"/>
+  <rect x="86" y="454" width="44" height="8" rx="3" fill="#c9d1dd"/>
+  <rect x="306" y="454" width="44" height="8" rx="3" fill="#c9d1dd"/>
+  <rect x="154" y="410" width="132" height="28" rx="5" fill="#fff" stroke="#c7d0df"/>
+  <text x="220" y="429" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#101525">OxyShade</text>
+
+  <path d="M74 110H345Q364 110 364 129V372" stroke="#c7ccd6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 372V129Q74 110 94 110" stroke="#c7ccd6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 110H345Q364 110 364 129V372" stroke="#f8fafc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 372V129Q74 110 94 110" stroke="#f8fafc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="94" width="294" height="18" rx="9" fill="#f4f6f8" stroke="#9ba7ba" stroke-width="1.2"/>
+  <rect x="70" y="378" width="294" height="18" rx="9" fill="#f4f6f8" stroke="#9ba7ba" stroke-width="1.2"/>
+
+  <g fill="#f7f7f2" stroke="#8792a4">
+    <rect x="80" y="104" width="60" height="24" rx="7"/>
+    <rect x="146" y="104" width="60" height="24" rx="7"/>
+    <rect x="212" y="104" width="60" height="24" rx="7"/>
+    <rect x="278" y="104" width="60" height="24" rx="7"/>
+    <rect x="80" y="372" width="60" height="24" rx="7"/>
+    <rect x="146" y="372" width="60" height="24" rx="7"/>
+    <rect x="212" y="372" width="60" height="24" rx="7"/>
+    <rect x="278" y="372" width="60" height="24" rx="7"/>
+  </g>
+
+  <g>
+    <rect x="88" y="122" width="44" height="256" rx="22" fill="url(#tube)" stroke="#6f7c8f" stroke-width="1.6"/>
+    <rect x="92" y="155" width="36" height="206" rx="18" fill="url(#culture)"/>
+    <rect x="94" y="132" width="9" height="226" rx="4" fill="url(#shine)"/>
+    <g clip-path="url(#tube-a)">
+      <circle cx="108" cy="334" r="3.8" fill="#d8ff66"/>
+      <circle cx="121" cy="292" r="2.7" fill="#fff" opacity=".75"/>
+      <circle cx="111" cy="245" r="2.3" fill="#d8ff66" opacity=".7"/>
+      <circle cx="123" cy="202" r="2.1" fill="#fff" opacity=".7"/>
+    </g>
+  </g>
+  <g>
+    <rect x="154" y="122" width="44" height="256" rx="22" fill="url(#tube)" stroke="#6f7c8f" stroke-width="1.6"/>
+    <rect x="158" y="155" width="36" height="206" rx="18" fill="url(#culture)"/>
+    <rect x="160" y="132" width="9" height="226" rx="4" fill="url(#shine)"/>
+    <g clip-path="url(#tube-b)">
+      <circle cx="174" cy="314" r="3.4" fill="#d8ff66"/>
+      <circle cx="187" cy="252" r="2.6" fill="#fff" opacity=".75"/>
+      <circle cx="177" cy="221" r="2.2" fill="#d8ff66" opacity=".68"/>
+      <circle cx="189" cy="182" r="2.2" fill="#fff" opacity=".72"/>
+    </g>
+  </g>
+  <g>
+    <rect x="220" y="122" width="44" height="256" rx="22" fill="url(#tube)" stroke="#6f7c8f" stroke-width="1.6"/>
+    <rect x="224" y="155" width="36" height="206" rx="18" fill="url(#culture)"/>
+    <rect x="226" y="132" width="9" height="226" rx="4" fill="url(#shine)"/>
+    <g clip-path="url(#tube-c)">
+      <circle cx="240" cy="330" r="3.6" fill="#d8ff66"/>
+      <circle cx="253" cy="270" r="2.7" fill="#fff" opacity=".74"/>
+      <circle cx="243" cy="229" r="2.2" fill="#d8ff66" opacity=".72"/>
+      <circle cx="255" cy="196" r="2.2" fill="#fff" opacity=".7"/>
+    </g>
+  </g>
+  <g>
+    <rect x="286" y="122" width="44" height="256" rx="22" fill="url(#tube)" stroke="#6f7c8f" stroke-width="1.6"/>
+    <rect x="290" y="155" width="36" height="206" rx="18" fill="url(#culture)"/>
+    <rect x="292" y="132" width="9" height="226" rx="4" fill="url(#shine)"/>
+    <g clip-path="url(#tube-d)">
+      <circle cx="306" cy="322" r="3.6" fill="#d8ff66"/>
+      <circle cx="319" cy="252" r="2.6" fill="#fff" opacity=".75"/>
+      <circle cx="309" cy="214" r="2.4" fill="#d8ff66" opacity=".72"/>
+      <circle cx="321" cy="184" r="2" fill="#fff" opacity=".7"/>
+    </g>
+  </g>
+
+  <g fill="#f4f6f8" stroke="#8792a4">
+    <circle cx="74" cy="110" r="8"/>
+    <circle cx="364" cy="110" r="8"/>
+    <circle cx="74" cy="388" r="8"/>
+    <circle cx="364" cy="388" r="8"/>
+  </g>
+  <path d="M364 388H396V430" stroke="#c7ccd6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="396" cy="448" r="18" fill="#fff" stroke="#4656df" stroke-width="2"/>
+  <path d="M386 448H406M396 438V458" stroke="#4656df" stroke-width="2" stroke-linecap="round"/>
+  <rect x="110" y="486" width="220" height="24" rx="6" fill="rgba(191,255,61,.2)" stroke="rgba(70,86,223,.2)" stroke-width="1"/>
+  <text x="220" y="502" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#1527b7">4 acrylic tubes · 500 × 600 × 150 mm</text>
+</svg>
