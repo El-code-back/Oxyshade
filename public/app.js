@@ -379,6 +379,66 @@ function setupCtas() {
   });
 }
 
+/* ─── Reactor live demo ─────────────────────────────────────── */
+function setupReactorDemo() {
+  const wrap = document.querySelector(".reactor-wrap");
+  const visual = document.querySelector(".reactor-visual");
+  const buttons = [...document.querySelectorAll("[data-reactor-mode]")];
+  if (!wrap || !visual || !buttons.length) return;
+
+  const modes = ["blueprint", "live", "pilot"];
+  let currentIndex = 0;
+  let userControlled = false;
+  let autoTimer;
+
+  function setMode(mode, source = "auto") {
+    currentIndex = Math.max(0, modes.indexOf(mode));
+    visual.dataset.mode = mode;
+    buttons.forEach((button) => {
+      const active = button.dataset.reactorMode === mode;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    if (source === "user") track("reactor_mode_change", { mode });
+  }
+
+  function startAutoCycle() {
+    if (userControlled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => {
+      currentIndex = (currentIndex + 1) % modes.length;
+      setMode(modes[currentIndex]);
+    }, 4600);
+  }
+
+  // fix: the reactor now has meaningful staged states instead of one always-on animation.
+  setMode("blueprint");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      userControlled = true;
+      clearInterval(autoTimer);
+      setMode(button.dataset.reactorMode, "user");
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          wrap.classList.add("reactor-awake");
+          startAutoCycle();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(wrap);
+  } else {
+    startAutoCycle();
+  }
+}
+
 /* ─── Scroll reveal via IntersectionObserver ─────────────────── */
 function initReveal() {
   if (!("IntersectionObserver" in window)) return;
@@ -405,6 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMenu();
   setupForm();
   setupCtas();
+  setupReactorDemo();
   // Re-observe after dynamic render
   requestAnimationFrame(initReveal);
 });

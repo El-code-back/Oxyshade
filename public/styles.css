@@ -579,6 +579,7 @@ h3 {
   position: relative;
   width: 100%;
   max-width: 440px;
+  margin-inline: auto;
   isolation: isolate;
 }
 
@@ -592,6 +593,7 @@ h3 {
   box-shadow: 0 12px 30px rgba(19, 35, 29, 0.09);
   border: 1px solid rgba(70, 86, 223, 0.14);
   background: #f8faff;
+  transition: border-color 220ms ease, box-shadow 220ms ease, filter 220ms ease;
 }
 
 .reactor-live-layer {
@@ -607,8 +609,24 @@ h3 {
 .live-side-flow,
 .live-light,
 .live-tube,
+.live-scan,
+.live-pulse,
+.live-meter,
+.live-pilot-pin,
 .live-chip {
   position: absolute;
+}
+.live-scan {
+  /* fix: added a slow diagnostic scan so the static drawing feels inspected, not randomly animated */
+  left: 9%;
+  top: 16%;
+  width: 82%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(70, 86, 223, 0.52), rgba(191, 255, 61, 0.78), transparent);
+  box-shadow: 0 0 18px rgba(70, 86, 223, 0.22);
+  opacity: 0;
+  animation: reactorScan 5.8s ease-in-out infinite;
 }
 .live-flow {
   left: 16%;
@@ -679,6 +697,21 @@ h3 {
   animation-delay: 1.7s;
   animation-duration: 4.2s;
 }
+.live-pulse {
+  /* fix: pulsing tube cores make the four acrylic columns read as active culture vessels */
+  top: 35%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(191, 255, 61, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation: reactorPulse 3.5s ease-out infinite;
+}
+.live-pulse-1 { left: 25%; animation-delay: 0.1s; }
+.live-pulse-2 { left: 40%; animation-delay: 0.7s; }
+.live-pulse-3 { left: 55%; animation-delay: 1.3s; }
+.live-pulse-4 { left: 70%; animation-delay: 1.9s; }
 .live-chip {
   display: inline-flex;
   align-items: center;
@@ -696,6 +729,161 @@ h3 {
 }
 .live-chip-co2 { left: 5%; top: 42%; }
 .live-chip-o2 { right: 5%; top: 34%; }
+.live-meter {
+  /* fix: micro-readouts replace generic sci-fi decoration with prototype-like measurements */
+  left: 8%;
+  width: 74px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(70, 86, 223, 0.14);
+  box-shadow: 0 7px 16px rgba(70, 86, 223, 0.08);
+}
+.live-meter::before {
+  content: "";
+  position: absolute;
+  inset: 1px auto 1px 1px;
+  width: var(--meter, 62%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ocean), var(--algae));
+}
+.live-meter::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: rgba(16, 21, 37, 0.58);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.live-meter-light { top: 79%; --meter: 72%; }
+.live-meter-flow { top: 84%; --meter: 54%; }
+.live-meter-culture { top: 89%; --meter: 66%; }
+.live-pilot-pin {
+  right: 6%;
+  bottom: 9%;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #111;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(6px);
+  box-shadow: 0 10px 22px rgba(16, 21, 37, 0.18);
+}
+.reactor-visual[data-mode="blueprint"] .live-flow,
+.reactor-visual[data-mode="blueprint"] .live-side-flow,
+.reactor-visual[data-mode="blueprint"] .live-tube,
+.reactor-visual[data-mode="blueprint"] .live-chip,
+.reactor-visual[data-mode="blueprint"] .live-meter,
+.reactor-visual[data-mode="blueprint"] .live-pulse {
+  /* fix: blueprint mode keeps the technical drawing legible before the live demo starts */
+  opacity: 0.12;
+  animation-play-state: paused;
+}
+.reactor-visual[data-mode="blueprint"] .live-scan {
+  opacity: 0;
+  animation: none;
+}
+.reactor-visual[data-mode="blueprint"] .live-light { opacity: 0.18; }
+.reactor-visual[data-mode="live"] .live-scan,
+.reactor-visual[data-mode="pilot"] .live-scan { opacity: 0.9; }
+.reactor-visual[data-mode="pilot"] .live-pilot-pin {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+.reactor-visual[data-mode="pilot"] .reactor-reference-img {
+  border-color: rgba(17, 17, 17, 0.14);
+  box-shadow: 0 18px 42px rgba(16, 21, 37, 0.12), 0 0 0 5px rgba(191, 255, 61, 0.12);
+}
+
+.reactor-sim-panel {
+  /* fix: turns the reactor into an interactive exhibit with clear controls and readings */
+  max-width: 440px;
+  margin: 14px auto 0;
+  padding: 16px;
+  border: 1px solid rgba(70, 86, 223, 0.16);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(191, 255, 61, 0.13), transparent 46%),
+    var(--surface);
+  box-shadow: 0 12px 26px rgba(70, 86, 223, 0.07);
+}
+.sim-copy h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.sim-copy p:not(.panel-label) {
+  color: var(--muted-text);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.reactor-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 14px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.reactor-mode-tabs button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted-text);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.reactor-mode-tabs button.active {
+  background: var(--surface);
+  color: var(--forest-deep);
+  box-shadow: 0 5px 14px rgba(70, 86, 223, 0.09);
+}
+.sim-readouts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.sim-readouts span {
+  min-width: 0;
+  border-left: 2px solid var(--algae);
+  padding-left: 8px;
+}
+.sim-readouts strong,
+.sim-readouts em {
+  display: block;
+}
+.sim-readouts strong {
+  color: rgba(16, 21, 37, 0.46);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.07em;
+}
+.sim-readouts em {
+  color: var(--ink);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 650;
+  line-height: 1.28;
+}
 
 @keyframes reactorFlow {
   from { background-position: -70% 0; }
@@ -708,6 +896,16 @@ h3 {
 @keyframes reactorGlow {
   0%, 100% { opacity: 0.35; transform: scale(0.98); }
   50% { opacity: 0.8; transform: scale(1.02); }
+}
+@keyframes reactorScan {
+  0%, 100% { top: 17%; opacity: 0; }
+  18%, 76% { opacity: 0.9; }
+  50% { top: 74%; opacity: 0.7; }
+}
+@keyframes reactorPulse {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.42); }
+  24% { opacity: 0.72; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.75); }
 }
 @keyframes liveBubble {
   0% { transform: translate(-50%, 0) scale(0.7); opacity: 0; }
@@ -995,7 +1193,7 @@ h3 {
    ══════════════════════════════════════════════════════════════ */
 .pilot-host-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) minmax(190px, 0.38fr);
   gap: clamp(18px, 3vw, 30px);
   align-items: center;
   max-width: var(--max-w);
@@ -1057,6 +1255,33 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+.pilot-host-status {
+  /* fix: short pilot steps make the ololo block feel operational, not like a generic partner logo */
+  display: grid;
+  gap: 8px;
+  align-self: stretch;
+  align-content: center;
+  border-left: 1px solid var(--line);
+  padding-left: clamp(16px, 2vw, 22px);
+}
+.pilot-host-status b {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-80);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.pilot-host-status b::before {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--algae);
+  box-shadow: 0 0 0 4px rgba(191, 255, 61, 0.18);
 }
 
 .partnership-layout {
@@ -1435,6 +1660,12 @@ details p {
   .partnership-layout { grid-template-columns: 1fr; }
   .pilot-host-card { grid-template-columns: 1fr; align-items: start; }
   .pilot-host-logo { width: 132px; min-height: 62px; }
+  .pilot-host-status {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 14px;
+  }
 
   .validation-step { grid-template-columns: 36px 1fr; gap: 12px; }
 
@@ -1504,6 +1735,13 @@ details p {
   .language-switch button { min-width: 38px; padding-inline: 7px; }
 
   #reactor-svg { max-width: 100%; }
+  .reactor-sim-panel { padding: 14px; }
+  .reactor-mode-tabs button { min-height: 34px; font-size: 10px; }
+  .sim-readouts { gap: 6px; }
+  .sim-readouts em { font-size: 11px; }
+  .live-chip { display: none; }
+  .live-meter { width: 58px; }
+  .live-pilot-pin { right: 4%; bottom: 6%; font-size: 9px; }
 }
 
 @media (max-width: 340px) {

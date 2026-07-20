@@ -117,8 +117,9 @@
             <div class="reactor-visual">
               <!-- fix: show the project-specific four-tube reactor based on supplied drawings/photos -->
               <img class="reactor-reference-img" src="/assets/oxyshade-reactor-reference.svg" alt="OxyShade four tube algae curtain bioreactor with base, collectors and pump connector">
-              <!-- fix: purposeful live layer adds status, flow and culture motion without changing the drawing geometry -->
+              <!-- fix: live layer now behaves like a product demo, not a decorative animation -->
               <div class="reactor-live-layer" aria-hidden="true">
+                <span class="live-scan"></span>
                 <span class="live-flow live-flow-top"></span>
                 <span class="live-flow live-flow-bottom"></span>
                 <span class="live-side-flow"></span>
@@ -126,9 +127,35 @@
                 <span class="live-tube live-tube-2"><i></i><i></i><i></i></span>
                 <span class="live-tube live-tube-3"><i></i><i></i><i></i></span>
                 <span class="live-tube live-tube-4"><i></i><i></i><i></i></span>
+                <span class="live-pulse live-pulse-1"></span>
+                <span class="live-pulse live-pulse-2"></span>
+                <span class="live-pulse live-pulse-3"></span>
+                <span class="live-pulse live-pulse-4"></span>
                 <span class="live-light"></span>
                 <span class="live-chip live-chip-co2">CO₂ in</span>
                 <span class="live-chip live-chip-o2">O₂ out</span>
+                <span class="live-meter live-meter-light" data-label="Light"></span>
+                <span class="live-meter live-meter-flow" data-label="Flow"></span>
+                <span class="live-meter live-meter-culture" data-label="Culture"></span>
+                <span class="live-pilot-pin">ololo pilot</span>
+              </div>
+            </div>
+            <div class="reactor-sim-panel">
+              <!-- fix: controls make the wow-effect useful and explainable instead of random motion -->
+              <div class="sim-copy">
+                <p class="panel-label" data-text="reactorSim.kicker"></p>
+                <h3 data-text="reactorSim.title"></h3>
+                <p data-text="reactorSim.body"></p>
+              </div>
+              <div class="reactor-mode-tabs" role="group" aria-label="Reactor demo modes">
+                <button type="button" class="active" data-reactor-mode="blueprint" data-text="reactorSim.blueprint"></button>
+                <button type="button" data-reactor-mode="live" data-text="reactorSim.live"></button>
+                <button type="button" data-reactor-mode="pilot" data-text="reactorSim.pilot"></button>
+              </div>
+              <div class="sim-readouts" aria-label="Prototype readouts">
+                <span><strong>LED</strong><em data-text="reactorSim.light"></em></span>
+                <span><strong>FLOW</strong><em data-text="reactorSim.flow"></em></span>
+                <span><strong>LOG</strong><em data-text="reactorSim.log"></em></span>
               </div>
             </div>
             <svg id="reactor-svg" viewBox="0 0 440 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="reactor-title">
@@ -354,6 +381,12 @@
             <h3 data-text="ololoPilot.title"></h3>
             <p data-text="ololoPilot.body"></p>
             <span data-text="ololoPilot.meta"></span>
+          </div>
+          <div class="pilot-host-status" aria-label="Pilot plan">
+            <!-- fix: pilot details are reduced to three concrete next steps to avoid overexplaining ololo -->
+            <b data-text="ololoPilot.step1"></b>
+            <b data-text="ololoPilot.step2"></b>
+            <b data-text="ololoPilot.step3"></b>
           </div>
         </article>
         <div class="partnership-layout">

@@ -41,6 +41,17 @@ window.OXY_CONTENT = {
       title: "Свет, вода, микроводоросли и измеримые параметры",
       intro: "Система использует фотосинтез для демонстрации поглощения CO₂, производства кислорода и роста биомассы. Эффективность зависит от объёма культуры, света, температуры, подачи воздуха и энергопотребления."
     },
+    reactorSim: {
+      kicker: "Живой контур",
+      title: "Реактор реагирует как демонстрационный прототип",
+      body: "Переключайте режимы: от инженерного чертежа к циркуляции, свету и сценарию будущего пилота в офисе.",
+      blueprint: "Чертёж",
+      live: "Live",
+      pilot: "ololo",
+      light: "мягкий LED",
+      flow: "циркуляция",
+      log: "журнал пилота"
+    },
     inside: [
       ["1", "Вода и культура", "Жидкая среда с Chlorella внутри прозрачного вертикального контура."],
       ["2", "Питательная среда", "Поддерживает рост культуры в контролируемом прототипе."],
@@ -101,7 +112,10 @@ window.OXY_CONTENT = {
       kicker: "Планируемая пилотная площадка",
       title: "Офис ololo в Бишкеке",
       body: "ololo — сеть креативных хабов и сообщество предпринимателей, инноваторов и креативных команд. Для OxyShade это подходящая живая среда: люди, офисный сценарий и открытая аудитория.",
-      meta: "Бишкек · creative hub · пилот в помещении"
+      meta: "Бишкек · creative hub · пилот в помещении",
+      step1: "выбор зоны",
+      step2: "монтаж прототипа",
+      step3: "наблюдения и обратная связь"
     },
     partnerItems: [
       ["Пилотная площадка", "Помещение, окно, стенд или учебная зона для тестовой установки.", "Что нужно: пространство и контакт. Что получаете: бесплатная установка, данные и публичное упоминание."],
@@ -186,6 +200,17 @@ window.OXY_CONTENT = {
       title: "Жарык, суу, микробалыр жана өлчөнүүчү параметрлер",
       intro: "Система жарыкты жана фотосинтезди CO₂ сиңирүү, кычкылтек бөлүү жана биомасса өстүрүү үчүн колдонот. Натыйжа культура көлөмүнө, жарыкка, температурага жана энергия чыгымына көз каранды."
     },
+    reactorSim: {
+      kicker: "Жандуу контур",
+      title: "Реактор демонстрациялык прототип сыяктуу жооп берет",
+      body: "Режимдерди алмаштырыңыз: инженердик чиймеден айланууга, жарыкка жана кеңседеги пилот сценарийине чейин.",
+      blueprint: "Чийме",
+      live: "Live",
+      pilot: "ololo",
+      light: "жумшак LED",
+      flow: "айлануу",
+      log: "пилот журналы"
+    },
     inside: [
       ["1", "Суу жана культура", "Chlorella бар суюк чөйрө тунук вертикалдык контурда жайгашат."],
       ["2", "Азык чөйрө", "Контролдонгон прототипте культуранын өсүшүн колдойт."],
@@ -246,7 +271,10 @@ window.OXY_CONTENT = {
       kicker: "Пландагы пилоттук жай",
       title: "Бишкектеги ololo офиси",
       body: "ololo — креативдүү хабдардын тармагы жана ишкерлер, инноваторлор, креативдүү командалар үчүн коомчулук. OxyShade үчүн бул тирүү кеңсе сценарийин текшерүүгө ылайыктуу чөйрө.",
-      meta: "Бишкек · creative hub · ички пилот"
+      meta: "Бишкек · creative hub · ички пилот",
+      step1: "зонаны тандоо",
+      step2: "прототипти орнотуу",
+      step3: "байкоо жана пикир"
     },
     partnerItems: [
       ["Пилоттук жай", "Имарат, терезе, стенд же окуу зонасы тесттик орнотуу үчүн.", "Эмне керек: мейкиндик жана байланыш. Эмне аласыз: бекер орнотуу, маалыматтар жана жарыялоо."],
@@ -331,6 +359,17 @@ window.OXY_CONTENT = {
       title: "Light, water, microalgae and measurable parameters",
       intro: "The system uses photosynthesis to demonstrate CO₂ absorption, oxygen production and biomass growth. Performance depends on culture volume, light, temperature, air supply and energy consumption."
     },
+    reactorSim: {
+      kicker: "Living loop",
+      title: "The reactor responds like a demo prototype",
+      body: "Switch modes from engineering drawing to circulation, light and the future office pilot scenario.",
+      blueprint: "Drawing",
+      live: "Live",
+      pilot: "ololo",
+      light: "soft LED",
+      flow: "circulation",
+      log: "pilot log"
+    },
     inside: [
       ["1", "Water and culture", "A liquid Chlorella culture inside a transparent vertical loop."],
       ["2", "Nutrients", "A controlled medium that supports culture growth in the prototype."],
@@ -391,7 +430,10 @@ window.OXY_CONTENT = {
       kicker: "Planned pilot location",
       title: "ololo office in Bishkek",
       body: "ololo is a creative hub network and community for entrepreneurs, innovators and creative teams. For OxyShade, it is a fitting real-world office setting with people, visibility and daily use.",
-      meta: "Bishkek · creative hub · indoor pilot"
+      meta: "Bishkek · creative hub · indoor pilot",
+      step1: "choose zone",
+      step2: "install prototype",
+      step3: "observe and collect feedback"
     },
     partnerItems: [
       ["Pilot site", "A room, window, stand or learning area for a test installation.", "What you provide: space and contact. What you get: free installation, data and public mention."],
