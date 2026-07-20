@@ -97,6 +97,12 @@ window.OXY_CONTENT = {
       title: "Разместите OxyShade в своём пространстве",
       intro: "Ищем площадки и партнёров для первых пилотных установок."
     },
+    ololoPilot: {
+      kicker: "Планируемая пилотная площадка",
+      title: "Офис ololo в Бишкеке",
+      body: "ololo — сеть креативных хабов и сообщество предпринимателей, инноваторов и креативных команд. Для OxyShade это подходящая живая среда: люди, офисный сценарий и открытая аудитория.",
+      meta: "Бишкек · creative hub · пилот в помещении"
+    },
     partnerItems: [
       ["Пилотная площадка", "Помещение, окно, стенд или учебная зона для тестовой установки.", "Что нужно: пространство и контакт. Что получаете: бесплатная установка, данные и публичное упоминание."],
       ["Научный партнёр", "Методика измерений, лабораторная поддержка и анализ данных.", "Что нужно: экспертиза. Что получаете: соавторство и доступ к данным первых испытаний."],
@@ -236,6 +242,12 @@ window.OXY_CONTENT = {
       title: "OxyShade пилотун өз мейкиндигиңизге жайгаштырыңыз",
       intro: "Жандуу технологияны тесттөөгө даяр жайларды жана өнөктөштөрдү издейбиз."
     },
+    ololoPilot: {
+      kicker: "Пландагы пилоттук жай",
+      title: "Бишкектеги ololo офиси",
+      body: "ololo — креативдүү хабдардын тармагы жана ишкерлер, инноваторлор, креативдүү командалар үчүн коомчулук. OxyShade үчүн бул тирүү кеңсе сценарийин текшерүүгө ылайыктуу чөйрө.",
+      meta: "Бишкек · creative hub · ички пилот"
+    },
     partnerItems: [
       ["Пилоттук жай", "Имарат, терезе, стенд же окуу зонасы тесттик орнотуу үчүн.", "Эмне керек: мейкиндик жана байланыш. Эмне аласыз: бекер орнотуу, маалыматтар жана жарыялоо."],
       ["Илимий өнөктөш", "Өлчөө методикасы, лабораториялык колдоо жана анализ.", "Эмне керек: экспертиза. Эмне аласыз: биргеавторлук жана биринчи маалыматтарга жетүү."],
@@ -374,6 +386,12 @@ window.OXY_CONTENT = {
       eyebrow: "Partnership",
       title: "Host an OxyShade pilot in your space",
       intro: "We are looking for sites and partners ready to test a living technology."
+    },
+    ololoPilot: {
+      kicker: "Planned pilot location",
+      title: "ololo office in Bishkek",
+      body: "ololo is a creative hub network and community for entrepreneurs, innovators and creative teams. For OxyShade, it is a fitting real-world office setting with people, visibility and daily use.",
+      meta: "Bishkek · creative hub · indoor pilot"
     },
     partnerItems: [
       ["Pilot site", "A room, window, stand or learning area for a test installation.", "What you provide: space and contact. What you get: free installation, data and public mention."],

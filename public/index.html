@@ -114,8 +114,23 @@
         <div class="tech-layout">
           <!-- Vertical reactor SVG diagram -->
           <div class="reactor-wrap reveal" aria-label="OxyShade vertical photobioreactor schematic">
-            <!-- fix: show the project-specific four-tube reactor based on supplied drawings/photos -->
-            <img class="reactor-reference-img" src="/assets/oxyshade-reactor-reference.svg" alt="OxyShade four tube algae curtain bioreactor with base, collectors and pump connector">
+            <div class="reactor-visual">
+              <!-- fix: show the project-specific four-tube reactor based on supplied drawings/photos -->
+              <img class="reactor-reference-img" src="/assets/oxyshade-reactor-reference.svg" alt="OxyShade four tube algae curtain bioreactor with base, collectors and pump connector">
+              <!-- fix: purposeful live layer adds status, flow and culture motion without changing the drawing geometry -->
+              <div class="reactor-live-layer" aria-hidden="true">
+                <span class="live-flow live-flow-top"></span>
+                <span class="live-flow live-flow-bottom"></span>
+                <span class="live-side-flow"></span>
+                <span class="live-tube live-tube-1"><i></i><i></i><i></i></span>
+                <span class="live-tube live-tube-2"><i></i><i></i><i></i></span>
+                <span class="live-tube live-tube-3"><i></i><i></i><i></i></span>
+                <span class="live-tube live-tube-4"><i></i><i></i><i></i></span>
+                <span class="live-light"></span>
+                <span class="live-chip live-chip-co2">CO₂ in</span>
+                <span class="live-chip live-chip-o2">O₂ out</span>
+              </div>
+            </div>
             <svg id="reactor-svg" viewBox="0 0 440 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="reactor-title">
               <title id="reactor-title">OxyShade vertical photobioreactor diagram with 3 tubes</title>
               <defs>
@@ -332,6 +347,15 @@
           <h2 data-text="partnership.title"></h2>
           <p data-text="partnership.intro"></p>
         </div>
+        <article class="pilot-host-card reveal" aria-label="Planned pilot host">
+          <div class="pilot-host-logo" aria-hidden="true">ololo</div>
+          <div class="pilot-host-copy">
+            <p class="pilot-host-kicker" data-text="ololoPilot.kicker"></p>
+            <h3 data-text="ololoPilot.title"></h3>
+            <p data-text="ololoPilot.body"></p>
+            <span data-text="ololoPilot.meta"></span>
+          </div>
+        </article>
         <div class="partnership-layout">
           <div class="partner-list" id="partner-list"></div>
           <div class="form-wrap">
