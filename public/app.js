@@ -359,8 +359,15 @@ function setupForm() {
       status.textContent = t("form.success");
       status.className = "form-status success";
       track("lead_submit", { type: payload.type });
-    } catch {
-      status.textContent = t("form.error");
+    } catch (error) {
+      const serverMessage = error?.message || "";
+      const errorKey = serverMessage === "Telegram is not configured"
+        ? "form.errors.telegramNotConfigured"
+        : serverMessage === "Telegram notification failed"
+          ? "form.errors.telegramFailed"
+          : "form.error";
+      // fix: form now explains Telegram setup problems instead of showing a vague registration error.
+      status.textContent = t(errorKey) || t("form.error");
       status.className = "form-status error";
     } finally {
       isSubmitting = false;

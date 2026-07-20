@@ -134,6 +134,10 @@ window.OXY_CONTENT = {
       submitting: "Отправка…",
       success: "Спасибо — заявка получена. Мы свяжемся с вами.",
       error: "Не удалось отправить. Проверьте поля и попробуйте ещё раз.",
+      errors: {
+        telegramNotConfigured: "Форма почти готова: на Vercel нужно добавить Telegram-токен и chat ID, затем redeploy.",
+        telegramFailed: "Telegram не принял заявку. Проверьте, что бот добавлен в группу и может писать сообщения."
+      },
       options: ["Пилотная площадка", "Научное партнёрство", "Технический партнёр", "Спонсорство", "Другое"]
     },
     faq: {
@@ -293,6 +297,10 @@ window.OXY_CONTENT = {
       submitting: "Жөнөтүлүүдө…",
       success: "Рахмат — өтүнмө кабыл алынды. Биз сиз менен байланышабыз.",
       error: "Жөнөтүлбөй калды. Талааларды текшерип кайра аракет кылыңыз.",
+      errors: {
+        telegramNotConfigured: "Форма дээрлик даяр: Vercel'ге Telegram token жана chat ID кошуп, кайра deploy кылыңыз.",
+        telegramFailed: "Telegram өтүнмөнү кабыл алган жок. Бот топко кошулганын жана билдирүү жаза аларын текшериңиз."
+      },
       options: ["Пилоттук орнотуу", "Илимий өнөктөштүк", "Техникалык өнөктөш", "Демөөрчүлүк", "Башка"]
     },
     faq: {
@@ -452,6 +460,10 @@ window.OXY_CONTENT = {
       submitting: "Sending…",
       success: "Thanks — your request has been received. We will be in touch.",
       error: "Could not send. Please check the fields and try again.",
+      errors: {
+        telegramNotConfigured: "The form is almost ready: add the Telegram token and chat ID in Vercel, then redeploy.",
+        telegramFailed: "Telegram rejected the request. Check that the bot is added to the group and can send messages."
+      },
       options: ["Pilot installation", "Scientific partnership", "Technical partner", "Sponsorship", "Other"]
     },
     faq: {

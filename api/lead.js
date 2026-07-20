@@ -62,7 +62,7 @@ module.exports = async function leadApi(req, res) {
       message: "Thanks. We received your request."
     });
   } catch (error) {
-    const status = error.message === "Telegram notification failed" || error.message === "Lead delivery is not configured" ? 502 : 400;
+    const status = error.message === "Telegram notification failed" || error.message === "Telegram is not configured" ? 502 : 400;
     send(res, status, { ok: false, message: error.message });
   }
 };

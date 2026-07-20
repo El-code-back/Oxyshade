@@ -133,7 +133,8 @@ async function deliverLead(lead) {
   }
 
   if (!telegram.enabled && !file.saved) {
-    throw new Error("Lead delivery is not configured");
+    console.warn("Lead delivery is not configured: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are missing.");
+    throw new Error("Telegram is not configured");
   }
 
   return { file, telegram };
